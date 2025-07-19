@@ -11,5 +11,5 @@ A Discord bot that uses [howWEfeel](https://mehrezat.com/howWEfeel/home.html).
 
 ## Roadmap
 
-- [] Obviously add a chat bot
-- [] probably refactor the code
+- [ ] Obviously add a chat bot
+- [ ] probably refactor the code
