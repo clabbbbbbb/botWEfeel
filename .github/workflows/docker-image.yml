@@ -1,0 +1,26 @@
+name: Docker CD
+
+on:
+  push:
+    branches: [ "main" ]
+
+jobs:
+  build:
+    runs-on: [self-hosted, linux, ARM64]
+
+    steps:
+    - uses: actions/checkout@v4
+    - name: Build the Docker image
+      run: docker build . --file Dockerfile --tag botwefeel:$(date +%s)
+
+  deploy:
+    needs: [build]
+    runs-on: [self-hosted, linux, ARM64]
+
+    steps:
+      - name: Stop and remove Docker container
+        run: |
+          (docker stop botwefeel && docker rm botwefeel)
+      - name: Start Docker container
+        run: |
+          (docker run --name=botwefeel -e DISCORD_TOKEN=${{ secrets.TOKEN }} botwefeel:$(date +%s))
