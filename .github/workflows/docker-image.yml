@@ -6,7 +6,7 @@ on:
 
 jobs:
   build:
-    runs-on: [self-hosted, linux, ARM64]
+    runs-on: [self-hosted, Linux, X64]
 
     steps:
     - uses: actions/checkout@v4
@@ -15,7 +15,7 @@ jobs:
 
   deploy:
     needs: [build]
-    runs-on: [self-hosted, linux, ARM64]
+    runs-on: [self-hosted, Linux, X64]
 
     steps:
       - name: Stop and remove Docker container
