@@ -9,6 +9,10 @@ A Discord bot that uses [howWEfeel](https://mehrezat.com/howWEfeel/home.html).
 3. `cargo run`
 4. Profit
 
+Or try it with Docker:
+2a. `docker build -t botwefeel:latest .`
+3a. `docker run --name='botwefeel' -e DISCORD_TOKEN='your_discord_token_here' botwefeel:latest`
+
 ## Roadmap
 
 - [ ] Obviously add a chat bot

@@ -32,7 +32,7 @@ pub async fn today(ctx: Context<'_>) -> Result<(), Error> {
     let now = Utc::now();
     let entries = get_entries(now).await?;
     if entries.is_empty() {
-        ctx.say("No entries found for today.").await?;
+        ctx.say("No entries found for today. Maybe try submitting [howYOUfeel](https://mehrezat.com/howWEfeel/home.html)?").await?;
         return Ok(());
     }
 
