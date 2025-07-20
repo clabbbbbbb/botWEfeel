@@ -23,4 +23,4 @@ jobs:
           (docker stop botwefeel && docker rm botwefeel)
       - name: Start Docker container
         run: |
-          (docker run --name=botwefeel -e DISCORD_TOKEN=${{ secrets.TOKEN }} botwefeel:latest)
+          (docker run --name=botwefeel -d -e DISCORD_TOKEN=${{ secrets.TOKEN }} botwefeel:latest)
