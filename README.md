@@ -10,8 +10,10 @@ A Discord bot that uses [howWEfeel](https://mehrezat.com/howWEfeel/home.html).
 4. Profit
 
 Or try it with Docker:
-2a. `docker build -t botwefeel:latest .`
-3a. `docker run --name='botwefeel' -e DISCORD_TOKEN='your_discord_token_here' botwefeel:latest`
+1. `git clone https://github.com/clabbbbbbb/hWf-bot.git`
+2. `docker build -t botwefeel:latest .`
+3. `docker run --name='botwefeel' -e DISCORD_TOKEN='your_discord_token_here' botwefeel:latest`
+4. Still profit
 
 ## Roadmap
 
