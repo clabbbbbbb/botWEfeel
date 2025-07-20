@@ -11,7 +11,7 @@ jobs:
     steps:
     - uses: actions/checkout@v4
     - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag botwefeel:$(date +%s)
+      run: docker build . --file Dockerfile --tag botwefeel:latest
 
   deploy:
     needs: [build]
@@ -23,4 +23,4 @@ jobs:
           (docker stop botwefeel && docker rm botwefeel)
       - name: Start Docker container
         run: |
-          (docker run --name=botwefeel -e DISCORD_TOKEN=${{ secrets.TOKEN }} botwefeel:$(date +%s))
+          (docker run --name=botwefeel -e DISCORD_TOKEN=${{ secrets.TOKEN }} botwefeel:latest
